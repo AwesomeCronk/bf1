@@ -1240,11 +1240,15 @@
       <elementName>Tunnel</elementName>
       <elementAttributes>
         <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
           <string>NetName</string>
           <string>Clk</string>
         </entry>
       </elementAttributes>
-      <pos x="1020" y="1880"/>
+      <pos x="740" y="1880"/>
     </visualElement>
     <visualElement>
       <elementName>And</elementName>
@@ -1434,15 +1438,11 @@
       <elementName>Not</elementName>
       <elementAttributes>
         <entry>
-          <string>rotation</string>
-          <rotation rotation="2"/>
-        </entry>
-        <entry>
           <string>wideShape</string>
           <boolean>true</boolean>
         </entry>
       </elementAttributes>
-      <pos x="980" y="1880"/>
+      <pos x="920" y="1880"/>
     </visualElement>
     <visualElement>
       <elementName>And</elementName>
