@@ -1054,7 +1054,7 @@
         </entry>
         <entry>
           <string>Bits</string>
-          <int>15</int>
+          <int>16</int>
         </entry>
       </elementAttributes>
       <pos x="760" y="1940"/>
@@ -1130,21 +1130,6 @@
         </entry>
       </elementAttributes>
       <pos x="-480" y="1940"/>
-    </visualElement>
-    <visualElement>
-      <elementName>RS_FF</elementName>
-      <elementAttributes/>
-      <pos x="-260" y="1880"/>
-    </visualElement>
-    <visualElement>
-      <elementName>RS_FF</elementName>
-      <elementAttributes/>
-      <pos x="-100" y="1880"/>
-    </visualElement>
-    <visualElement>
-      <elementName>RS_FF</elementName>
-      <elementAttributes/>
-      <pos x="60" y="1880"/>
     </visualElement>
     <visualElement>
       <elementName>Or</elementName>
@@ -1256,11 +1241,6 @@
       <pos x="540" y="1940"/>
     </visualElement>
     <visualElement>
-      <elementName>RS_FF</elementName>
-      <elementAttributes/>
-      <pos x="1040" y="1320"/>
-    </visualElement>
-    <visualElement>
       <elementName>Tunnel</elementName>
       <elementAttributes>
         <entry>
@@ -1322,11 +1302,6 @@
         </entry>
       </elementAttributes>
       <pos x="1140" y="1300"/>
-    </visualElement>
-    <visualElement>
-      <elementName>RS_FF</elementName>
-      <elementAttributes/>
-      <pos x="1040" y="1620"/>
     </visualElement>
     <visualElement>
       <elementName>And</elementName>
@@ -1490,6 +1465,31 @@
         </entry>
       </elementAttributes>
       <pos x="740" y="1280"/>
+    </visualElement>
+    <visualElement>
+      <elementName>JK_FF</elementName>
+      <elementAttributes/>
+      <pos x="-260" y="1880"/>
+    </visualElement>
+    <visualElement>
+      <elementName>JK_FF</elementName>
+      <elementAttributes/>
+      <pos x="-100" y="1880"/>
+    </visualElement>
+    <visualElement>
+      <elementName>JK_FF</elementName>
+      <elementAttributes/>
+      <pos x="60" y="1880"/>
+    </visualElement>
+    <visualElement>
+      <elementName>JK_FF</elementName>
+      <elementAttributes/>
+      <pos x="1040" y="1620"/>
+    </visualElement>
+    <visualElement>
+      <elementName>JK_FF</elementName>
+      <elementAttributes/>
+      <pos x="1040" y="1320"/>
     </visualElement>
   </visualElements>
   <wires>
