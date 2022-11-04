@@ -1,6 +1,6 @@
 # Bill of Materials
-1. Up/down counter 8b x3    - 74ls161 x6
-2. Up/down counter 16b x1   - 74ls161 x4
+1. Up/down counter 8b x3    - 
+2. Up/down counter 16b x1   - 
 3. RAM 64k*8b x1            - 71256SA12TPG x2
 4. ROM 64k*8b x1            - AT28C64B x2
 5. 8b compare equal x1      - 74ls86 x2, more stuff
