@@ -1,41 +1,41 @@
 ### + (increment data)
-- data out, changer in /
-- changer out, data in /
-- counter increment /
+- Data_Out; Changer_In
+- Changer_Add
+- Changer_Out; Data_In
+- Counter_Inc
 
 ### - (decrement data)
-- data out, changer in /
-- changer sub, changer out, data in /
-- counter increment /
+- Data_Out; Changer_In
+- Changer_Sub
+- Changer_Out; Data_In
+- Counter_Inc
 
 ### , (get input)
+- Input_Await
+- Input_Out; Data_In
+- Counter_Inc; Step_Reset
 - 
-- input await, input out, data in /
-- counter increment /
 
 ### . (set output)
-- data out, output in /
+- Data_Out; Output_In
+- Counter_Inc; Step_Reset
 - 
-- counter increment /
+- 
 
 ### < (decrement pointer)
-- pointer decrement /
+- Pointer_Inc
+- Counter_Inc; Step_Reset
 - 
-- counter increment /
+- 
 
 ### > (increment pointer)
-- pointer increment /
+- Pointer_Dec
+- Counter_Inc; Step_Reset
 - 
-- counter increment /
+- 
 
-### [
-- if data zero
-  - Latch depth - 1 into target_depth and iterate down the program until depth == target_depth
-- if data nonzero
-  - pass
-
-### ]
-- if data zero
-  - pass
-- if data nonzero
-  - Latch depth into target_depth and iterate up the program until depth == target_depth
+### [ and ]
+- if not (Seek and ShouldTrigger) then latch TargetDepth
+- increment/decrement CurrentDepth (inverse if Dir); if ShouldTrigger then {set Seek; if `]` then set Dir}
+- if CurrentDepth == TargetDepth then {reset Seek; reset Dir}
+- if Seek and Dir then decrement Counter else increment Counter
