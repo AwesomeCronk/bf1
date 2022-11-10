@@ -13,24 +13,24 @@
 ### , (get input)
 - Input_Await
 - Input_Out; Data_In
-- Counter_Inc; Step_Reset
+- Counter_Inc; Step_Rst
 - 
 
 ### . (set output)
 - Data_Out; Output_In
-- Counter_Inc; Step_Reset
+- Counter_Inc; Step_Rst
 - 
 - 
 
 ### < (decrement pointer)
 - Pointer_Inc
-- Counter_Inc; Step_Reset
+- Counter_Inc; Step_Rst
 - 
 - 
 
 ### > (increment pointer)
 - Pointer_Dec
-- Counter_Inc; Step_Reset
+- Counter_Inc; Step_Rst
 - 
 - 
 
@@ -38,4 +38,4 @@
 - if not (Seek and ShouldTrigger) then latch TargetDepth
 - increment/decrement CurrentDepth (inverse if Dir); if ShouldTrigger then {set Seek; if `]` then set Dir}
 - if CurrentDepth == TargetDepth then {reset Seek; reset Dir}
-- if Seek and Dir then decrement Counter else increment Counter
+- if Dir then decrement Counter else increment Counter
