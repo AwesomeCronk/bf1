@@ -29,7 +29,7 @@
   
 ### [ and ]
 - if (not Seek) and ShouldTrigger then latch TargetDepth
-- increment/decrement Depth (inverse if Dir)
+- if (not ShouldTrigger and `]`) then increment/decrement Depth (inverse if Dir)
 - if ShouldTrigger then {set Seek; if `]` then set Dir}
 - if Depth == TargetDepth then {reset Seek; reset Dir}
 - if Dir then decrement Counter else increment Counter (use Seek to dictate Counter En so that seeking actually works)
