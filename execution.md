@@ -28,8 +28,11 @@
 - Counter_Cnt; Step_Rst
   
 ### [ and ]
-- if (not Seek) and ShouldTrigger then latch TargetDepth
-- if (not ShouldTrigger and `]`) then increment/decrement Depth (decrement if ((NOT ShouldTrigger) AND (`]` XOR Dir)))
-- if ShouldTrigger then {set Seek; if `]` then set Dir}
+- Data_Out; if (not Seek) and ShouldTrigger then latch TargetDepth
+- Data_Out; increment/decrement Depth (decrement if ((NOT ShouldTrigger) AND (`]` XOR Dir)))
+- Data_Out; if ShouldTrigger then {set Seek; if `]` then set Dir}
 - if Depth == TargetDepth then {reset Seek; reset Dir}
 - if Dir then decrement Counter else increment Counter (use Seek to dictate Counter En so that seeking actually works)
+
+### Notes
+Data_Out must be active if checking ShouldTrigger.
