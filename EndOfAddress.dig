@@ -127,7 +127,7 @@ in the chain.</string>
           <string>End</string>
         </entry>
       </elementAttributes>
-      <pos x="1520" y="600"/>
+      <pos x="1140" y="260"/>
     </visualElement>
   </visualElements>
   <wires>
@@ -158,6 +158,10 @@ in the chain.</string>
     <wire>
       <p1 x="940" y="260"/>
       <p2 x="960" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="1120" y="260"/>
+      <p2 x="1140" y="260"/>
     </wire>
     <wire>
       <p1 x="860" y="420"/>
@@ -264,10 +268,6 @@ in the chain.</string>
       <p2 x="880" y="280"/>
     </wire>
     <wire>
-      <p1 x="1500" y="600"/>
-      <p2 x="1520" y="600"/>
-    </wire>
-    <wire>
       <p1 x="680" y="600"/>
       <p2 x="1360" y="600"/>
     </wire>
@@ -310,6 +310,10 @@ in the chain.</string>
     <wire>
       <p1 x="1440" y="380"/>
       <p2 x="1440" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="1120" y="260"/>
+      <p2 x="1120" y="300"/>
     </wire>
     <wire>
       <p1 x="740" y="300"/>
