@@ -1,0 +1,205 @@
+{
+    NumControlLines: 16,
+    NumConditionLines: 1,
+    NumStates: 8,
+    NumSteps: 8,
+
+    Options:
+    {
+        'StateAddr': 'PriorityEncode'
+    },
+
+    ControlLines:
+    [
+        'Counter_Cnt',
+        'Pointer_Inc',
+        'Pointer_Dec',
+        'Data_In',
+        'Data_Out',
+        'Changer_Add',
+        'Changer_Sub',
+        'Changer_In',
+        'Changer_Out',
+        'Input_Out',
+        'Input_Await',
+        'Output_In',
+        'TryStopSeek',
+        'TrySeek',
+        'TryLatchDepth',
+        'CountDepth'
+    ],
+
+    ConditionLines:
+    [
+        'Seek'
+    ],
+
+    DefaultStep: [],
+    
+    States:
+    {
+        'blank': [],
+        
+        '+':
+        [
+            {
+                '!Seek': ['Data_Out', 'Changer_In'],
+                '': []
+            },
+            {
+                '!Seek': ['Changer_Add'],
+                '': []
+            },
+            {
+                '!Seek': ['Changer_Out', 'Data_In'],
+                '': []
+            },
+            {
+                '!Seek': ['Counter_Cnt'],
+                '': []
+            },
+            {
+                'Seek': ['Counter_Cnt'],
+                '': []
+            }
+        ],
+        
+        '-':
+        [
+            {
+                '!Seek': ['Data_Out', 'Changer_In'],
+                '': []
+            },
+            {
+                '!Seek': ['Changer_Sub'],
+                '': []
+            },
+            {
+                '!Seek': ['Changer_Out', 'Data_In'],
+                '': []
+            },
+            {
+                '!Seek': ['Counter_Cnt'],
+                '': []
+            },
+            {
+                'Seek': ['Counter_Cnt'],
+                '': []
+            }
+        ],
+        
+        ',':
+        [
+            {
+                '!Seek': ['Input_Await'],
+                '': []
+            },
+            {
+                '!Seek': ['Input_Out', 'Data_In'],
+                '': []
+            },
+            {
+                '!Seek': ['Counter_Cnt'],
+                '': []
+            },
+            [],
+            {
+                'Seek': ['Counter_Cnt'],
+                '': []
+            }
+        ],
+
+        '.':
+        [
+            {
+                '!Seek': ['Data_Out', 'Output_In'],
+                '': []
+            },
+            {
+                '!Seek': ['Counter_Cnt'],
+                    '': []
+            },
+            [],
+            [],
+            {
+                'Seek': ['Counter_Cnt'],
+                '': []
+            }
+        ],
+
+        '<':
+        [
+            {
+                '!Seek': ['Pointer_Dec'],
+                '': []
+            },
+            {
+                '!Seek': ['Counter_Cnt'],
+                '': []
+            },
+            [],
+            [],
+            {
+                'Seek': ['Counter_Cnt'],
+                '': []
+            }
+        ],
+
+        '>':
+        [
+            {
+                '!Seek': ['Pointer_Inc'],
+                '': []
+            },
+            {
+                '!Seek': ['Counter_Cnt'],
+                '': []
+            },
+            [],
+            [],
+            {
+                'Seek': ['Counter_Cnt'],
+                '': []
+            }
+        ],
+
+        '[':
+        [
+            ['TryLatchDepth', 'Data_Out'],
+            ['CountDepth', 'Data_Out'],
+            ['TrySeek', 'Data_Out'],
+            ['TryStopSeek'],
+            ['Counter_Cnt']
+        ],
+
+        ']':
+        [
+            ['TryLatchDepth', 'Data_Out'],
+            ['CountDepth', 'Data_Out'],
+            ['TrySeek', 'Data_Out'],
+            ['TryStopSeek'],
+            ['Counter_Cnt']
+        ],
+
+        'invalid':
+        [
+            {
+                '!Seek': ['Counter_Cnt'],
+                '': []
+            }
+        ]
+    },
+
+    StateOrder:
+    [
+        '+',
+        '-',
+        ',',
+        '.',
+        '<',
+        '>',
+        '[',
+        ']',
+        'invalid'
+    ]
+}
