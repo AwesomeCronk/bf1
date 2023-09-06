@@ -1,0 +1,18 @@
+// resetTiming.json5 - WaveDrom Code
+
+{
+  signal:
+  [
+    {name: 'Clk',          	wave: 'p.......', period: 2},
+    {name: 'Rst', 			wave: 'x.1.0...........'},
+    {name: 'Cntr_Clr',     	wave: 'x.1.0...........'},
+    {name: 'Pntr_Clr',     	wave: 'x.1.0......10...'},
+    {name: 'EndOfAddress',  wave: 'x.0......1.0....'},
+    {name: '!Pntr_Up',      wave: '1...010101......'},
+    {name: 'Pntr',			wave: 'x.=..=.=.=.=.x..', data: [0, 1, 2, 3, 0]},
+    {name: 'Data_Str',      wave: 'x.1........0....'},
+    {name: 'Data',			wave: 'x...=.=.=.=.x..', data: [0, 0, 0, 0]},
+    {name: 'Enable',      	wave: '1.0.........1...'}
+      
+  ]
+}

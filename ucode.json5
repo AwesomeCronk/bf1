@@ -14,14 +14,14 @@
         'Counter_Cnt',
         'Pointer_Inc',
         'Pointer_Dec',
-        'Data_In',
-        'Data_Out',
         'Changer_Add',
         'Changer_Sub',
         'Changer_In',
         'Changer_Out',
-        'Input_Out',
+        'Data_In',
+        'Data_Out',
         'Input_Await',
+        'Input_Out',
         'Output_In',
         'TryStopSeek',
         'TrySeek',
@@ -31,7 +31,7 @@
 
     ConditionLines:
     [
-        'Seek'
+        'Enable'
     ],
 
     DefaultStep: [],
@@ -43,23 +43,23 @@
         '+':
         [
             {
-                '!Seek': ['Data_Out', 'Changer_In'],
+                'Enable': ['Data_Out', 'Changer_In'],
                 '': []
             },
             {
-                '!Seek': ['Changer_Add'],
+                'Enable': ['Changer_Add'],
                 '': []
             },
             {
-                '!Seek': ['Changer_Out', 'Data_In'],
+                'Enable': ['Changer_Out', 'Data_In'],
                 '': []
             },
             {
-                '!Seek': ['Counter_Cnt'],
+                'Enable': ['Counter_Cnt'],
                 '': []
             },
             {
-                'Seek': ['Counter_Cnt'],
+                '!Enable': ['Counter_Cnt'],
                 '': []
             }
         ],
@@ -67,23 +67,23 @@
         '-':
         [
             {
-                '!Seek': ['Data_Out', 'Changer_In'],
+                'Enable': ['Data_Out', 'Changer_In'],
                 '': []
             },
             {
-                '!Seek': ['Changer_Sub'],
+                'Enable': ['Changer_Sub'],
                 '': []
             },
             {
-                '!Seek': ['Changer_Out', 'Data_In'],
+                'Enable': ['Changer_Out', 'Data_In'],
                 '': []
             },
             {
-                '!Seek': ['Counter_Cnt'],
+                'Enable': ['Counter_Cnt'],
                 '': []
             },
             {
-                'Seek': ['Counter_Cnt'],
+                '!Enable': ['Counter_Cnt'],
                 '': []
             }
         ],
@@ -91,20 +91,20 @@
         ',':
         [
             {
-                '!Seek': ['Input_Await'],
+                'Enable': ['Input_Await'],
                 '': []
             },
             {
-                '!Seek': ['Input_Out', 'Data_In'],
+                'Enable': ['Input_Out', 'Data_In'],
                 '': []
             },
             {
-                '!Seek': ['Counter_Cnt'],
+                'Enable': ['Counter_Cnt'],
                 '': []
             },
             [],
             {
-                'Seek': ['Counter_Cnt'],
+                '!Enable': ['Counter_Cnt'],
                 '': []
             }
         ],
@@ -112,17 +112,17 @@
         '.':
         [
             {
-                '!Seek': ['Data_Out', 'Output_In'],
+                'Enable': ['Data_Out', 'Output_In'],
                 '': []
             },
             {
-                '!Seek': ['Counter_Cnt'],
+                'Enable': ['Counter_Cnt'],
                     '': []
             },
             [],
             [],
             {
-                'Seek': ['Counter_Cnt'],
+                '!Enable': ['Counter_Cnt'],
                 '': []
             }
         ],
@@ -130,17 +130,17 @@
         '<':
         [
             {
-                '!Seek': ['Pointer_Dec'],
+                'Enable': ['Pointer_Dec'],
                 '': []
             },
             {
-                '!Seek': ['Counter_Cnt'],
+                'Enable': ['Counter_Cnt'],
                 '': []
             },
             [],
             [],
             {
-                'Seek': ['Counter_Cnt'],
+                '!Enable': ['Counter_Cnt'],
                 '': []
             }
         ],
@@ -148,17 +148,17 @@
         '>':
         [
             {
-                '!Seek': ['Pointer_Inc'],
+                'Enable': ['Pointer_Inc'],
                 '': []
             },
             {
-                '!Seek': ['Counter_Cnt'],
+                'Enable': ['Counter_Cnt'],
                 '': []
             },
             [],
             [],
             {
-                'Seek': ['Counter_Cnt'],
+                '!Enable': ['Counter_Cnt'],
                 '': []
             }
         ],
@@ -184,7 +184,7 @@
         'invalid':
         [
             {
-                '!Seek': ['Counter_Cnt'],
+                'Enable': ['Counter_Cnt'],
                 '': []
             }
         ]
