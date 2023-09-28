@@ -1,6 +1,6 @@
 {
     NumControlLines: 16,
-    NumConditionLines: 1,
+    NumConditionLines: 2,
     NumStates: 8,
     NumSteps: 8,
 
@@ -31,6 +31,7 @@
 
     ConditionLines:
     [
+        'Seek',
         'Enable'
     ],
 
@@ -43,19 +44,20 @@
         '+':
         [
             {
-                'Enable': ['Data_Out', 'Changer_In'],
+                'Enable&!Seek': ['Data_Out', 'Changer_In'],
+                'Seek': ['Counter_Cnt'],
                 '': []
             },
             {
-                'Enable': ['Changer_Add'],
+                'Enable&!Seek': ['Changer_Add'],
                 '': []
             },
             {
-                'Enable': ['Changer_Out', 'Data_In'],
+                'Enable&!Seek': ['Changer_Out', 'Data_In'],
                 '': []
             },
             {
-                'Enable': ['Counter_Cnt'],
+                'Enable&!Seek': ['Counter_Cnt'],
                 '': []
             },
             {
@@ -67,19 +69,20 @@
         '-':
         [
             {
-                'Enable': ['Data_Out', 'Changer_In'],
+                'Enable&!Seek': ['Data_Out', 'Changer_In'],
+                'Seek': ['Counter_Cnt'],
                 '': []
             },
             {
-                'Enable': ['Changer_Sub'],
+                'Enable&!Seek': ['Changer_Sub'],
                 '': []
             },
             {
-                'Enable': ['Changer_Out', 'Data_In'],
+                'Enable&!Seek': ['Changer_Out', 'Data_In'],
                 '': []
             },
             {
-                'Enable': ['Counter_Cnt'],
+                'Enable&!Seek': ['Counter_Cnt'],
                 '': []
             },
             {
@@ -91,15 +94,16 @@
         ',':
         [
             {
-                'Enable': ['Input_Await'],
+                'Enable&!Seek': ['Input_Await'],
+                'Seek': ['Counter_Cnt'],
                 '': []
             },
             {
-                'Enable': ['Input_Out', 'Data_In'],
+                'Enable&!Seek': ['Input_Out', 'Data_In'],
                 '': []
             },
             {
-                'Enable': ['Counter_Cnt'],
+                'Enable&!Seek': ['Counter_Cnt'],
                 '': []
             },
             [],
@@ -112,11 +116,12 @@
         '.':
         [
             {
-                'Enable': ['Data_Out', 'Output_In'],
+                'Enable&!Seek': ['Data_Out', 'Output_In'],
+                'Seek': ['Counter_Cnt'],
                 '': []
             },
             {
-                'Enable': ['Counter_Cnt'],
+                'Enable&!Seek': ['Counter_Cnt'],
                     '': []
             },
             [],
@@ -130,11 +135,12 @@
         '<':
         [
             {
-                'Enable': ['Pointer_Dec'],
+                'Enable&!Seek': ['Pointer_Dec'],
+                'Seek': ['Counter_Cnt'],
                 '': []
             },
             {
-                'Enable': ['Counter_Cnt'],
+                'Enable&!Seek': ['Counter_Cnt'],
                 '': []
             },
             [],
@@ -148,11 +154,12 @@
         '>':
         [
             {
-                'Enable': ['Pointer_Inc'],
+                'Enable&!Seek': ['Pointer_Inc'],
+                'Seek': ['Counter_Cnt'],
                 '': []
             },
             {
-                'Enable': ['Counter_Cnt'],
+                'Enable&!Seek': ['Counter_Cnt'],
                 '': []
             },
             [],
