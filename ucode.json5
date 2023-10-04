@@ -23,8 +23,8 @@
         'Input_Await',
         'Input_Out',
         'Output_In',
-        'TryStopSeek',
         'TrySeek',
+        'TryStopSeek',
         'TryLatchDepth',
         'CountDepth'
     ],
@@ -172,19 +172,43 @@
 
         '[':
         [
-            ['TryLatchDepth', 'Data_Out'],
-            ['CountDepth', 'Data_Out'],
-            ['TrySeek', 'Data_Out'],
-            ['TryStopSeek'],
+            {
+                'Enable': ['TryLatchDepth'],
+                '': []
+            },
+            {
+                'Enable': ['CountDepth'],
+                '': []
+            },
+            {
+                'Enable': ['TrySeek'],
+                '': []
+            },
+            {
+                'Enable': ['TryStopSeek'],
+                '': []
+            },
             ['Counter_Cnt']
         ],
 
         ']':
         [
-            ['TryLatchDepth', 'Data_Out'],
-            ['CountDepth', 'Data_Out'],
-            ['TrySeek', 'Data_Out'],
-            ['TryStopSeek'],
+            {
+                'Enable': ['TryLatchDepth'],
+                '': []
+            },
+            {
+                'Enable': ['CountDepth'],
+                '': []
+            },
+            {
+                'Enable': ['TrySeek'],
+                '': []
+            },
+            {
+                'Enable': ['TryStopSeek'],
+                '': []
+            },
             ['Counter_Cnt']
         ],
 
